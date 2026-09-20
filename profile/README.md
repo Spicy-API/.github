@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://avatars.githubusercontent.com/u/331549122?s=200&v=4" alt="SpicyAPI" width="88" height="88">
+
 # SpicyAPI
 
 ### One API for image, video and text models — including the uncensored ones
