@@ -6,7 +6,7 @@
 
 ### One API for image, video and text models — including the uncensored ones
 
-**83 model families · 121 endpoints · priced in dollars, not credits**
+**Video, image, text and audio · priced in dollars, not credits**
 
 [**Get an API key**](https://spicyapi.ai) &nbsp;·&nbsp; [Models](https://spicyapi.ai/models) &nbsp;·&nbsp; [Documentation](https://docs.spicyapi.ai) &nbsp;·&nbsp; [Status](https://status.spicyapi.ai)
 
@@ -32,8 +32,8 @@ you are buying *before* the bill arrives. That includes the uncomfortable cases:
 quietly returns something tamer than you asked for is worse than one that refuses outright, and we
 label both rather than pretending the difference does not exist.
 
-**27 of our 121 endpoints** are LoRA-tuned for adult work. They live in their own families with
-their own pricing and docs.
+A sizeable part of the catalogue is LoRA-tuned for adult work. Those models live in their own
+families with their own pricing and docs.
 
 ## 💵 &nbsp;Dollars, not credits
 
@@ -59,7 +59,7 @@ Media generation is asynchronous everywhere, so it behaves the same everywhere: 
 | 💬 **Text** | Chat and reasoning through compatible wire formats<br><sub>Claude Opus 5 · Gemini 3.1 Pro · DeepSeek V4 Pro · Kimi K3 · GLM 5.3 · Grok 4.6</sub> |
 | 🎧 **Audio** | Transcription<br><sub>HeartMuLa Transcribe</sub> |
 
-<div align="right"><a href="https://spicyapi.ai/models"><b>Browse all 121 endpoints »</b></a></div>
+<div align="right"><a href="https://spicyapi.ai/models"><b>Browse the full catalogue »</b></a></div>
 
 <br>
 
