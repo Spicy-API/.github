@@ -1,72 +1,71 @@
-<div align="center">
-
 # SpicyAPI
 
-**One API for image, video and text models — including the uncensored ones.**
+Most aggregators decide for you what a model is allowed to produce, then bill you in points
+you bought upfront. This one does neither.
 
-[Get an API key](https://spicyapi.ai) · [Models](https://spicyapi.ai/models) · [Docs](https://docs.spicyapi.ai) · [Status](https://status.spicyapi.ai)
+```bash
+curl https://api.spicyapi.ai/api/v1/jobs/createTask \
+  -H "Authorization: Bearer $SPICY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"bytedance/seedance-2.5/text-to-video","input":{"prompt":"..."}}'
+```
 
-</div>
+One key. 121 endpoints behind it. Priced in dollars, quoted before you spend.
 
 ---
 
-## What this is
+### No content review on our side
 
-A single endpoint in front of **83 model families across 121 callable endpoints**. One key, one
-request shape, one bill — instead of an account, a contract and a client library per provider.
+What a model produces is decided by the model you pick — not by a flag you have to set, an
+approval queue, or a classifier sitting between you and the thing you paid for. 27 of our
+endpoints are LoRA-tuned for adult work and live in their own families.
 
-Two things are unusual enough to state plainly:
+We measured the filtering behaviour of every route and put the result on the model page, so
+you can tell what you are buying **before** the bill. A model that quietly substitutes a safer
+output is worse than one that refuses, and we label both.
 
-- **No content review on our side.** What a model will produce is decided by the model you pick, not
-  by a per-request declaration or an approval queue. Every model page carries the filtering tier we
-  measured for it, so you can tell before you spend.
-- **Cash pricing, no credit system.** Prices are in USD and quoted per request. You can ask what a
-  call will cost *before* you make it, and the quote is what gets held.
+### Dollars, not credits
 
-## Models
+Prices are USD per request. `POST /quote` tells you what a specific call will cost, that
+number is what gets held, and you are charged the real cost when it settles — never more than
+the hold. No expiring balance, no conversion rate, no minimum top-up.
 
-| | |
-|---|---|
-| 🎬 **Video** | Seedance 2.5 · Seedance 2.0 · MiniMax H3 · Wan 2.7 · LTX 2.5 · Vidu Q3 · Krea 2 · HappyHorse 1.1 |
-| 🎨 **Image** | Seedream 5.0 Pro · Qwen Image 3.0 · Z-Image · Face Swap · Head Swap · Prefect Pony XL |
-| 💬 **Text** | Claude Opus 5 · Gemini 3.1 Pro · DeepSeek V4 Pro · Kimi K3 · GLM 5.3 · Grok 4.6 |
-| 🎧 **Audio** | HeartMuLa Transcribe |
+### One request shape
 
-27 of those 121 endpoints are LoRA-tuned for adult work. They live in their own families, priced and
-documented separately, so nothing about them leaks into the general catalogue. [Browse the full catalogue »](https://spicyapi.ai/models)
+Media generation is asynchronous everywhere, so it works the same everywhere: create a task,
+get a `202`, then poll or take a webhook. Text models speak the OpenAI, Anthropic and Gemini
+wire formats — point an existing client at our base URL and it works unchanged.
 
-## Build with it
+---
 
-| | Install | |
+## What you can generate
+
+**Video** — text-to-video, image-to-video, reference-to-video, up to 4K.
+Seedance 2.5 · Seedance 2.0 · MiniMax H3 · Wan 2.7 · LTX 2.5 · Vidu Q3 · Krea 2 · HappyHorse 1.1
+
+**Image** — generation, editing, face and head swap.
+Seedream 5.0 Pro · Qwen Image 3.0 · Z-Image · Prefect Pony XL
+
+**Text** — Claude Opus 5 · Gemini 3.1 Pro · DeepSeek V4 Pro · Kimi K3 · GLM 5.3 · Grok 4.6
+
+**Audio** — HeartMuLa Transcribe
+
+83 families, 121 endpoints, all of it in one catalogue →
+[spicyapi.ai/models](https://spicyapi.ai/models)
+
+## Clients
+
+| | | |
 |---|---|---|
-| **TypeScript** | `npm i @spicyapi/sdk` | [spicy-devkit](https://github.com/Spicy-API/spicy-devkit) |
-| **Python** | `pip install spicyapi` | [spicy-python](https://github.com/Spicy-API/spicy-python) |
-| **Go** | `go get github.com/Spicy-API/spicy-go` | [spicy-go](https://github.com/Spicy-API/spicy-go) |
-| **PHP** | `composer require spicyapi/spicyapi` | [spicy-php](https://github.com/Spicy-API/spicy-php) |
-| **Java** | `ai.spicyapi:spicyapi-java` | [spicy-java](https://github.com/Spicy-API/spicy-java) |
+| TypeScript | `npm i @spicyapi/sdk` | on npm |
+| Go | `go get github.com/Spicy-API/spicy-go` | [repo](https://github.com/Spicy-API/spicy-go) |
+| Python | from source for now | [repo](https://github.com/Spicy-API/spicy-python) |
+| PHP | from source for now | [repo](https://github.com/Spicy-API/spicy-php) |
+| Java | from source for now | [repo](https://github.com/Spicy-API/spicy-java) |
 
-Also shipped: a **CLI** (`npx @spicyapi/cli`), an **MCP server** so agents can generate media
-directly, and an **Agent Skill** for Claude.
+There is also a CLI (`npx @spicyapi/cli status` — no key required), an MCP server so agents can
+generate media themselves, and an Agent Skill for Claude.
 
-```bash
-npx @spicyapi/cli status        # no key needed
-npx @spicyapi/cli models list
-```
+---
 
-## How a generation goes
-
-```
-quote  →  create (202, funds held)  →  poll or webhook  →  settle at the real cost
-```
-
-Media generation is asynchronous and every task is quotable first. The hold is an estimate; you are
-charged what it actually cost, never more than the hold. Text models speak the OpenAI, Anthropic and
-Gemini wire formats, so existing clients work by changing the base URL.
-
-<div align="center">
-<sub>
-
-[spicyapi.ai](https://spicyapi.ai) · [docs](https://docs.spicyapi.ai) · [support@spicyapi.ai](mailto:support@spicyapi.ai)
-
-</sub>
-</div>
+[Get a key](https://spicyapi.ai) · [Docs](https://docs.spicyapi.ai) · [Status](https://status.spicyapi.ai) · [support@spicyapi.ai](mailto:support@spicyapi.ai)
