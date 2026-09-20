@@ -6,7 +6,7 @@
 
 ### One API for image, video and text models — including the uncensored ones
 
-**Video, image, text and audio · priced in dollars, not credits**
+**80+ model families · 100+ endpoints · priced in dollars, not credits**
 
 [**Get an API key**](https://spicyapi.ai) &nbsp;·&nbsp; [Models](https://spicyapi.ai/models) &nbsp;·&nbsp; [Documentation](https://docs.spicyapi.ai) &nbsp;·&nbsp; [Status](https://status.spicyapi.ai)
 
@@ -59,7 +59,7 @@ Media generation is asynchronous everywhere, so it behaves the same everywhere: 
 | 💬 **Text** | Chat and reasoning through compatible wire formats<br><sub>Claude Opus 5 · Gemini 3.1 Pro · DeepSeek V4 Pro · Kimi K3 · GLM 5.3 · Grok 4.6</sub> |
 | 🎧 **Audio** | Transcription<br><sub>HeartMuLa Transcribe</sub> |
 
-<div align="right"><a href="https://spicyapi.ai/models"><b>Browse the full catalogue »</b></a></div>
+<div align="right"><a href="https://spicyapi.ai/models"><b>Browse all 100+ endpoints »</b></a></div>
 
 <br>
 
