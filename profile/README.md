@@ -32,7 +32,7 @@ you are buying *before* the bill arrives. That includes the uncomfortable cases:
 quietly returns something tamer than you asked for is worse than one that refuses outright, and we
 label both rather than pretending the difference does not exist.
 
-A sizeable part of the catalogue is LoRA-tuned for adult work. Those models live in their own
+A sizeable part of the catalogue is LoRA-tuned for uncensored work. Those models live in their own
 families with their own pricing and docs.
 
 ## 💵 &nbsp;Dollars, not credits
