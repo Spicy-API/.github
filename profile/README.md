@@ -104,7 +104,7 @@ us a `callBackUrl` and we will tell you.
 <div align="center">
 <sub>
 
-[spicyapi.ai](https://spicyapi.ai) &nbsp;·&nbsp; [docs.spicyapi.ai](https://docs.spicyapi.ai) &nbsp;·&nbsp; [@spicyapi](https://x.com/spicyapi) &nbsp;·&nbsp; [support@spicyapi.ai](mailto:support@spicyapi.ai)
+[spicyapi.ai](https://spicyapi.ai) &nbsp;·&nbsp; [docs.spicyapi.ai](https://docs.spicyapi.ai) &nbsp;·&nbsp; [support@spicyapi.ai](mailto:support@spicyapi.ai)
 
 </sub>
 </div>
